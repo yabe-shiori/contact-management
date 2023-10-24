@@ -5,7 +5,7 @@
 ユーザーはお問い合わせを入力し、確認画面を経てデータが保存されます。
 管理者はお問い合わせデータを検索し、削除できます。
 
-![トップ画面の画像](screenshot.png)
+![トップ画面の画像](./contact-management.png)
 <-- トップ画面の画像を貼り付け -->
 
 ## 作成した目的
@@ -47,7 +47,18 @@
 
 ## テーブル設計
 
-< -- 作成したテーブル設計の画像を貼り付け -->
+**contactsテーブル**
+|  Column     |     Type      |   Option    |
+| ------------| ------------- | ----------- |
+|id           |PRIMARYKEY     |NOT NULL     |
+|name         |varchar(255)   |NOT NULL     |
+|gender       | tinyint       |NOT NULL     |
+|postcode     | char(8)       |NOT NULL     |
+| address     | varchar(255)  |NOT NULL     |
+|building_name| varchar(255)  |             |
+| opinion     | text          |NOT NULL     |
+|created_at   |timstamp       |             |
+|updated_at   |timstamp       |             |
 
 ## ER図
 
