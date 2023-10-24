@@ -1,0 +1,67 @@
+.contact {
+    width: 1230px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.contact-ttl {
+    padding-top: 30px;
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-item,
+.contact-body {
+    padding: 20px;
+}
+
+.contact-item {
+    text-align: left;
+    width: 30%;
+}
+
+.contact-body {
+    width: 70%;
+}
+
+.form-text {
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    max-width: 900px;
+}
+
+.form-text.name {
+    width: 30%;
+}
+
+
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.error-message {
+    color: red;
+}
+
+.description {
+    font-size: 14px;
+    color: #888;
+}
+
+.required {
+    color: red;
+    font-size: 14px;
+}
