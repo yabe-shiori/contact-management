@@ -1,28 +1,67 @@
+.contacts__data {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.contacts__data th,
+.contacts__data td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inner__Wrap {
+    max-width: 1230px;
+}
+
 h1 {
     text-align: center;
 }
 
-
-.search-form {
+.search__form {
+    background-color: #efe8d9;
+    padding-bottom: 60px;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
 }
 
-.search-button {
+form {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form__group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    vertical-align: baseline;
+    margin-right: 5px;
+}
+
+.search__button-center {
+    text-align: center;
+}
+
+.search__button {
     background-color: black;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
-.reset-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.reset__button-center {
+    text-align: center;
 }
 
 svg.w-5.h-5 {
@@ -30,15 +69,15 @@ svg.w-5.h-5 {
     height: 30px;
 }
 
-.form__group-date {
-    display: inline-block;
-}
-
-.delete-button {
+.delete__button {
     background-color: black;
+    border-radius: 4px;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+}
 
+.pagination {
+    float: right;
 }

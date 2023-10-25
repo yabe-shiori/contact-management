@@ -4,33 +4,33 @@
     padding: 60px 0;
 }
 
-.contact-ttl {
+.contact__ttl {
     padding-top: 30px;
     font-size: 40px;
     margin-bottom: 40px;
     text-align: center;
 }
 
-.contact-table {
+.contact__table {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.contact-item,
-.contact-body {
+.contact__table-item,
+.contact__table-body {
     padding: 20px;
 }
 
-.contact-item {
+.contact__table-item {
     text-align: left;
     width: 30%;
 }
 
-.contact-body {
+.contact__table-body {
     width: 70%;
 }
 
-.form-text {
+.form__text {
     width: 100%;
     display: inline-block;
     padding: 10px;
@@ -39,12 +39,12 @@
     max-width: 900px;
 }
 
-.form-text.name {
+.form__text.name {
     width: 30%;
 }
 
 
-.form-textarea {
+.form__textarea {
     width: 100%;
     padding: 10px;
     height: 200px;
@@ -61,7 +61,7 @@
     color: #888;
 }
 
-.required {
+.contact__table__item-required {
     color: red;
     font-size: 14px;
 }

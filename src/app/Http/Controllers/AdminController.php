@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth'); // 認証が必要なアクションを保護
+        $this->middleware('auth');
     }
     public function index(Request $request)
     {

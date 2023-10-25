@@ -23,18 +23,18 @@
 
 @section('content')
     <div class="contact">
-        <h1 class="contact-ttl">お問い合わせ</h1>
+        <h1 class="contact__ttl">お問い合わせ</h1>
         <form class="form h-adr" action="{{ route('contact.confirm') }}" method="post">
             @csrf
-            <table class="contact-table">
+            <table class="contact__table">
                 <input type="hidden" class="p-country-name" value="Japan">
                 <tr>
-                    <th class="contact-item">
-                        <label>お名前<span class="required">※</span></label>
+                    <th class="contact__table-item">
+                        <label>お名前<span class="contact__table__item-required">※</span></label>
                     </th>
-                    <td class="contact-body">
+                    <td class="contact__table-body">
 
-                        <input type="text" name="name" class="form-text name"
+                        <input type="text" name="name" class="form__text name"
                             value="{{ old('name', session('contactData.name')) }}" />
                         {{-- <input type="text" name="first_name" class="form-text name"
                             value="{{ old('first_name') }}" placeholder="名" /> --}}
@@ -46,10 +46,10 @@
                         </div>
                     </td>
                 </tr>
-                <th class="contact-item">
-                    <label>性別<span class="required">※</span></label>
+                <th class="contact__table-item">
+                    <label>性別<span class="contact__table__item-required">※</span></label>
                 </th>
-                <td class="contact-body">
+                <td class="contact__table-body">
                     <input type="radio" name="gender" value="1" checked>
                     <label>男性</label>
                     <input type="radio" name="gender" value="2">
@@ -58,11 +58,11 @@
                 </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">
-                        <label>メールアドレス<span class="required">※</span></label>
+                    <th class="contact__table-item">
+                        <label>メールアドレス<span class="contact__table__item-required">※</span></label>
                     </th>
-                    <td class="contact-body">
-                        <input type="email" name="email" class="form-text"
+                    <td class="contact__table-body">
+                        <input type="email" name="email" class="form__text"
                             value="{{ old('email', session('contactData.email')) }}" />
                         <div class="description">例）test@example.com</div>
                         <div class="error-message">
@@ -73,11 +73,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">
-                        <label>郵便番号<span class="required">※</span></label>
+                    <th class="contact__table-item">
+                        <label>郵便番号<span class="contact__table__item-required">※</span></label>
                     </th>
-                    <td class="contact-body">
-                        <input type="text" id="postcode" name="postcode" class="form-text p-postal-code" size="8"
+                    <td class="contact__table-body">
+                        <input type="text" id="postcode" name="postcode" class="form__text p-postal-code" size="8"
                             maxlength="8" value="{{ old('postcode', session('contactData.postcode')) }}" />
                         <div class="description">例）123-4567</div>
                         <div class="error-message">
@@ -88,12 +88,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">
-                        <label>住所<span class="required">※</span></label>
+                    <th class="contact__table-item">
+                        <label>住所<span class="contact__table__item-required">※</span></label>
                     </th>
-                    <td class="contact-body">
+                    <td class="contact__table-body">
                         <input type="text" name="address"
-                            class="form-text p-region p-locality p-street-address p-extended-address"
+                            class="form__text p-region p-locality p-street-address p-extended-address"
                             value="{{ old('address', session('contactData.address')) }}" />
                         <div class="description">例） 東京都渋谷区千駄ヶ谷1-2-3</div>
                         <div class="error-message">
@@ -104,11 +104,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">
+                    <th class="contact__table-item">
                         <label for="building_name">建物名</label>
                     </th>
-                    <td class="contact-body">
-                        <input type="text" name="building_name" class="form-text"
+                    <td class="contact__table-body">
+                        <input type="text" name="building_name" class="form__text"
                             value="{{ old('building_name', session('contactData.building_name')) }}" />
                         <div class="description">例）千駄ケ谷マンション101</div>
                         <div class="error-message">
@@ -119,11 +119,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="contact-item">
-                        <label>ご意見<span class="required">※</span></label>
+                    <th class="contact__table-item">
+                        <label>ご意見<span class="contact__table__item-required">※</span></label>
                     </th>
-                    <td class="contact-body">
-                        <textarea name="opinion" class="form-textarea">{{ old('opinion', session('contactData.opinion')) }}</textarea>
+                    <td class="contact__table-body">
+                        <textarea name="opinion" class="form__textarea">{{ old('opinion', session('contactData.opinion')) }}</textarea>
                         <div class="error-message">
                             @error('opinion')
                                 {{ $message }}
