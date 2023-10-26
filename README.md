@@ -1,7 +1,8 @@
 # contact-management
 
 # 概要
-このアプリケーションは、お問い合わせの管理を行うためのシステムです。   
+
+このアプリケーションは、お問い合わせの管理を行うためのシステムです。  
 ユーザーはお問い合わせを入力し、確認画面を経てデータが保存されます。
 管理者はお問い合わせデータを検索し、削除できます。
 
@@ -11,20 +12,21 @@
 ## 作成した目的
 
 このアプリケーションを作成した主な目的は、以下の通りです。
+
 - ウェブサイトの訪問者が簡単にお問い合わせできるシステムを提供する。
 - お問い合わせデータを効率的に管理し、管理者が必要な情報を簡単に検索できるようにする。
 
+## アプリケーションの URL
 
-## アプリケーションのURL
-
-デプロイURL: [アプリケーションのURLをここに貼り付け]
+デプロイ URL: [アプリケーションの URL をここに貼り付け]
 
 注意事項:
-管理者画面のログイン機能について  
-- name -> Admin  
-- email -> admin@test.com  
+管理者画面のログイン機能について
+
+- name -> Admin
+- email -> admin@test.com
 - password -> password
-を入力し、ログインする。
+  を入力し、ログインする。
 
 ## 機能一覧
 
@@ -42,25 +44,23 @@
 - PHP 7.4
 - Laravel 8.x
 - MySQL 8.0
-- JavaScript (フロントエンド機能の実装に使用)
-
+- JavaScript
 
 ## テーブル設計
 
-**contactsテーブル**
-|  Column     |     Type      |   Option    |
+**contacts テーブル**
+| Column | Type | Option |
 | ------------| ------------- | ----------- |
-|id           |PRIMARYKEY     |NOT NULL     |
-|name         |varchar(255)   |NOT NULL     |
-|gender       | tinyint       |NOT NULL     |
-|postcode     | char(8)       |NOT NULL     |
-| address     | varchar(255)  |NOT NULL     |
-|building_name| varchar(255)  |             |
-| opinion     | text          |NOT NULL     |
-|created_at   |timstamp       |             |
-|updated_at   |timstamp       |             |
+|id |PRIMARYKEY |NOT NULL |
+|name |varchar(255) |NOT NULL |
+|gender | tinyint |NOT NULL |
+|postcode | char(8) |NOT NULL |
+| address | varchar(255) |NOT NULL |
+|building_name| varchar(255) | |
+| opinion | text |NOT NULL |
+|created_at |timstamp | |
+|updated_at |timstamp | |
 
-## ER図
+## ER 図
 
-< -- 作成したER図の画像を貼り付け -->
-
+< -- 作成した ER 図の画像を貼り付け -->

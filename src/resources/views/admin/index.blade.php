@@ -39,7 +39,7 @@
             </div>
         </form>
         <div class="pagination">
-            {{ $contacts->links() }}
+            {{ $contacts->links('pagination::default') }}
         </div>
         @if ($searching ?? false)
             @if ($contacts->count() > 0)
