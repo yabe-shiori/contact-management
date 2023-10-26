@@ -23,7 +23,8 @@ class AdminController extends Controller
     {
         $name = $request->input('name');
         $gender = $request->input('gender');
-        $created_at = $request->input('created_at');
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
         $email = $request->input('email');
 
         $query = Contact::query();
@@ -35,13 +36,14 @@ class AdminController extends Controller
             $query->where('gender', $gender);
         }
 
-        if ($created_at) {
-            $query->whereDate('created_at', $created_at);
+        if ($start_date && $end_date) {
+            $query->whereBetween('created_at', [$start_date, $end_date]);
         }
 
         if ($email) {
             $query->where('email', 'LIKE', '%' . $email . '%');
         }
+
         $contacts = $query->paginate(10);
         $searching = true;
         return view('admin.index', compact('contacts', 'searching'));

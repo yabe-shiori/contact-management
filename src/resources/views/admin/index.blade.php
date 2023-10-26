@@ -10,23 +10,22 @@
         <form method="post" action="{{ route('admin.search') }}" class="search__form">
             @csrf
             <div class="form__group">
-                <label for="name">お名前</label>
+                <label for="name" class="form__group-name">お名前</label>
                 <input type="text" name="name" value="{{ old('name') }}">
+                <label for="gender" class="form__group-gender">性別</label>
+                <input type="radio" name="gender" value="0" {{ old('gender', '0') === '0' ? 'checked' : '' }}>
+                <label for="gender">全て</label>
+                <input type="radio" name="gender" value="1" {{ old('gender') === '1' ? 'checked' : '' }}>
+                <label for="gender">男性</label>
+                <input type="radio" name="gender" value="2" {{ old('gender') === '2' ? 'checked' : '' }}>
+                <label for="gender">女性</label>
             </div>
             <div class="form__group">
-                <div class="form__group-gender">
-                    <label for="gender">性別</label>
-                    <input type="radio" name="gender" value="0" {{ old('gender', '0') === '0' ? 'checked' : '' }}>全て
-                    <input type="radio" name="gender" value="1" {{ old('gender') === '1' ? 'checked' : '' }}>男性
-                    <input type="radio" name="gender" value="2" {{ old('gender') === '2' ? 'checked' : '' }}>女性
-                </div>
+                <label for="created_at" class="form__group-date">登録日</label>
+                <input type="date" name="start_date" value="{{ old('start_date') }}">
+                <span class="form__group__date-between">~</span>
+                <input type="date" name="end_date" value="{{ old('end_date') }}">
             </div>
-
-            <div class="form__group">
-                <label for="created_at">登録日</label>
-                <input type="date" name="created_at" value="{{ old('created_at') }}">
-            </div>
-
             <div class="form__group">
                 <label for="email">メールアドレス</label>
                 <input type="text" name="email" value="{{ old('email') }}">

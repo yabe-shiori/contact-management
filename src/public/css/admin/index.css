@@ -13,6 +13,7 @@
 
 .inner__Wrap {
     max-width: 1230px;
+    padding: 20px;
 }
 
 h1 {
@@ -20,23 +21,35 @@ h1 {
 }
 
 .search__form {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
     background-color: #efe8d9;
     border: 1px solid #ccc;
 }
 
-form {
-    padding: 20px;
-    width: 80%;
-    margin: 0 auto;
-}
-
 .form__group {
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .form__group input {
     width: 25%;
     height: 30px;
+}
+
+.form__group-name,
+.form__group-date {
+    margin-right: 10%;
+}
+
+.form__group-gender {
+    margin-left: 50px;
+}
+
+.form__group-gender label {
+    margin-right: 10px;
 }
 
 label {
@@ -56,16 +69,23 @@ input[type="radio"] {
 }
 
 .search__button {
+    width: 13%;
     background-color: black;
     color: white;
     border: none;
-    padding: 10px 20px;
+    border-radius: 4px;
+    padding: 8px 20px;
     cursor: pointer;
     margin-bottom: 10px;
 }
 
 .reset__button-center {
+    font-size: 14px;
     text-align: center;
+}
+
+.reset__button-center a {
+    color: rgb(75, 69, 72);
 }
 
 /* svg.w-5.h-5 {
@@ -85,3 +105,20 @@ input[type="radio"] {
 /* .pagination {
     float: right;
 } */
+thead {
+    border-bottom: 1px solid #ccc;
+}
+
+.form__group input[type="date"] {
+    width: 25%;
+    height: 30px;
+}
+
+.form__group-date {
+    text-align: center;
+}
+
+.form__group__date-between {
+    margin: 0 20px;
+}
+
