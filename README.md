@@ -15,8 +15,7 @@
 
 
 ## アプリケーションのURL
-
-デプロイURL: [アプリケーションのURLをここに貼り付け]
+[https://github.com/yabe-shiori/contact-management.git]
 
 注意事項:
 管理者画面のログイン機能について  
