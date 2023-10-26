@@ -6,7 +6,6 @@
 管理者はお問い合わせデータを検索し、削除できます。
 
 ![トップ画面の画像](./contact-management.png)
-<-- トップ画面の画像を貼り付け -->
 
 ## 作成した目的
 
@@ -61,6 +60,5 @@
 |updated_at   |timstamp       |             |
 
 ## ER図
-
-< -- 作成したER図の画像を貼り付け -->
+![ER図](./contact-management-er.png)
 
