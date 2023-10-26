@@ -7,7 +7,6 @@
 管理者はお問い合わせデータを検索し、削除できます。
 
 ![トップ画面の画像](./contact-management.png)
-<-- トップ画面の画像を貼り付け -->
 
 ## 作成した目的
 
@@ -18,7 +17,8 @@
 
 ## アプリケーションの URL
 
-デプロイ URL: [アプリケーションの URL をここに貼り付け]
+## アプリケーションのURL
+[https://github.com/yabe-shiori/contact-management.git]
 
 注意事項:
 管理者画面のログイン機能について
@@ -61,6 +61,6 @@
 |created_at |timstamp | |
 |updated_at |timstamp | |
 
-## ER 図
+## ER図
+![ER図](./contact-management-er.png)
 
-< -- 作成した ER 図の画像を貼り付け -->
