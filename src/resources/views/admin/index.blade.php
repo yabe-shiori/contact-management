@@ -38,7 +38,7 @@
             </div>
         </form>
         <div class="pagination">
-            {{ $contacts->links('pagination::default') }}
+            {{ $contacts->appends(request()->input())->links('pagination::default') }}
         </div>
         @if ($searching ?? false)
             @if ($contacts->count() > 0)
