@@ -7,17 +7,22 @@
 @section('content')
     <div class="confirm__content">
         <div class="confirm__heading">
-            <h2>お問い合わせ内容確認</h2>
+            <h2>内容確認</h2>
         </div>
         <form class="form" action="{{ route('contact.store') }}" method="post">
             @csrf
             <div class="confirm-table">
                 <table class="confirm-table__inner">
                     <tr class="confirm-table__row">
-                        <th class="confirm-table__header">お名前</th>
-                        <td class="confirm-table__text">
-                            <input type="text" name="name" value="{{ $contact['name'] }}"readonly>
-                        </td>
+                        <div class="confirm-table__row">
+                            <th class="confirm-table__header">お名前</th>
+                            <td class="confirm-table__text">
+                                <div class="name-inputs">
+                                    <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly>
+                                    <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly>
+                                </div>
+                            </td>
+                        </div>
                     </tr>
                     <tr class="confirm-table__row">
                         <th class="confirm-table__header">性別</th>

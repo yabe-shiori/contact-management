@@ -25,6 +25,7 @@ Route::post('/contacts/confirm', [ContactController::class, 'confirm'])
 Route::post('/contacts', [ContactController::class, 'store'])
     ->name('contact.store');
 
+
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])
         ->name('admin.index');

@@ -8,7 +8,7 @@
         margin: 30px auto;
         list-style: none;
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
     }
 
@@ -20,6 +20,10 @@
     .pagination-list {
         width: 10%;
         float: right;
+    }
+
+    .pagination-custom li {
+        margin: 0 5px;
     }
 </style>
 @if ($paginator->hasPages())

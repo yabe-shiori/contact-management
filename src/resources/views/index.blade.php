@@ -21,19 +21,45 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const nameInput = document.getElementsByName('name')[0];
+            const lastNameInput = document.getElementsByName('last_name')[0];
+            const firstNameInput = document.getElementsByName('first_name')[0];
+            const nameError = document.getElementById('name-error');
             const emailInput = document.getElementsByName('email')[0];
             const postcodeInput = document.getElementById('postcode');
             const addressInput = document.getElementsByName('address')[0];
             const opinionInput = document.getElementsByName('opinion')[0];
 
             function validateName() {
-                const nameError = document.getElementById('name-error');
-                const nameValue = nameInput.value;
-                if (nameValue.trim() === '' || nameValue.length > 255) {
-                    nameError.textContent = 'お名前は必須です(255文字以内)';
+                const lastNameValue = lastNameInput.value.trim();
+                const firstNameValue = firstNameInput.value.trim();
+                const fullName = lastNameValue + firstNameValue;
+
+                if (fullName === '') {
+                    nameError.textContent = '苗字と名前は必須です';
+                } else if (fullName.length > 255) {
+                    nameError.textContent = '苗字と名前を255文字以内で入力してください';
                 } else {
                     nameError.textContent = '';
+                }
+            }
+
+            function validateLastName() {
+                const lastNameError = document.getElementById('last-name-error');
+                const lastNameValue = lastNameInput.value;
+                if (lastNameValue.trim() === '') {
+                    lastNameError.textContent = '苗字は必須です';
+                } else {
+                    lastNameError.textContent = '';
+                }
+            }
+
+            function validateFirstName() {
+                const firstNameError = document.getElementById('first-name-error');
+                const firstNameValue = firstNameInput.value;
+                if (firstNameValue.trim() === '') {
+                    firstNameError.textContent = '名前は必須です';
+                } else {
+                    firstNameError.textContent = '';
                 }
             }
 
@@ -78,8 +104,16 @@
                     opinionError.textContent = '';
                 }
             }
+            lastNameInput.addEventListener('input', function() {
+                validateLastName();
+                validateName();
+            });
 
-            nameInput.addEventListener('input', validateName);
+            firstNameInput.addEventListener('input', function() {
+                validateFirstName();
+                validateName();
+            });
+
             emailInput.addEventListener('input', validateEmail);
             postcodeInput.addEventListener('input', validatePostcode);
             addressInput.addEventListener('input', validateAddress);
@@ -97,15 +131,24 @@
                 <input type="hidden" class="p-country-name" value="Japan">
                 <tr>
                     <th class="contact__table-item">
-                        <label>お名前<span class="contact__table__item-required">※</span></label>
+                        <label for="name">お名前<span class="contact__table__item-required">※</span></label>
                     </th>
                     <td class="contact__table-body">
-
-                        <input type="text" name="name" class="form__text name"
-                            value="{{ old('name', session('contactData.name')) }}" />
-                        {{-- <input type="text" name="first_name" class="form-text name"
-                            value="{{ old('first_name') }}" placeholder="名" /> --}}
+                        <input type="text" name="last_name" class="form__text name"
+                            value="{{ old('last_name', session('contactData.last_name')) }}"placeholder="性" />
+                        <input type="text" name="first_name" class="form__text name"
+                            value="{{ old('first_name', session('contactData.first_name')) }}" placeholder="名" />
                         <div class="description">例）山田 太郎</div>
+                        <div class="error-message" id="last-name-error">
+                            @error('last_name')
+                                {{ $message }}
+                            @enderror
+                        </div>
+                        <div class="error-message" id="first-name-error">
+                            @error('first_name')
+                                {{ $message }}
+                            @enderror
+                        </div>
                         <div class="error-message" id="name-error">
                             @error('name')
                                 {{ $message }}
@@ -114,7 +157,7 @@
                     </td>
                 </tr>
                 <th class="contact__table-item">
-                    <label>性別<span class="contact__table__item-required">※</span></label>
+                    <label for="gender">性別<span class="contact__table__item-required">※</span></label>
                 </th>
                 <td class="contact__table-body">
                     <input type="radio" name="gender" value="1" checked>
@@ -126,7 +169,7 @@
                 </tr>
                 <tr>
                     <th class="contact__table-item">
-                        <label>メールアドレス<span class="contact__table__item-required">※</span></label>
+                        <label for="email">メールアドレス<span class="contact__table__item-required">※</span></label>
                     </th>
                     <td class="contact__table-body">
                         <input type="email" name="email" class="form__text"
@@ -141,7 +184,7 @@
                 </tr>
                 <tr>
                     <th class="contact__table-item">
-                        <label>郵便番号<span class="contact__table__item-required">※</span></label>
+                        <label for="postcode">郵便番号<span class="contact__table__item-required">※</span></label>
                     </th>
                     <td class="contact__table-body">
                         <input type="text" id="postcode" name="postcode" class="form__text p-postal-code" size="8"
@@ -156,7 +199,7 @@
                 </tr>
                 <tr>
                     <th class="contact__table-item">
-                        <label>住所<span class="contact__table__item-required">※</span></label>
+                        <label for="address">住所<span class="contact__table__item-required">※</span></label>
                     </th>
                     <td class="contact__table-body">
                         <input type="text" name="address"
@@ -187,7 +230,7 @@
                 </tr>
                 <tr>
                     <th class="contact__table-item">
-                        <label>ご意見<span class="contact__table__item-required">※</span></label>
+                        <label for="opinion">ご意見<span class="contact__table__item-required">※</span></label>
                     </th>
                     <td class="contact__table-body">
                         <textarea name="opinion" class="form__textarea">{{ old('opinion', session('contactData.opinion')) }}</textarea>
